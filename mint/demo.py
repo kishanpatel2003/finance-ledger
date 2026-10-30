@@ -1,4 +1,4 @@
-"""Synthetic NYC-flavored transactions for trying Mint without real data."""
+"""Generate example transactions for the ledger."""
 from __future__ import annotations
 
 import csv

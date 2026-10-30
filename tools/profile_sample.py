@@ -7,7 +7,7 @@ This is the quickest way to look at an export before committing it to the ledger
         [--accounts "amex,chase"] [--sign auto|neg-out|pos-out]
         [--map date=Date,amount=Amount,merchant=Description,category=Category,account=Account]
         [--out reports/] [--quiet]
-  python3 tools/profile_sample.py --demo demo.csv     # synthetic data, then profile it
+  python3 tools/profile_sample.py --demo example.csv  # create and profile example transactions
 
 Same engine as `python3 -m mint profile`; see mint/profile.py.
 """
@@ -40,7 +40,7 @@ def main(argv=None):
 
     if args.demo:
         from mint.demo import write_demo
-        print(f"wrote {write_demo(args.demo)} synthetic rows to {args.demo}", file=sys.stderr)
+        print(f"wrote {write_demo(args.demo)} example rows to {args.demo}", file=sys.stderr)
         args.csv = args.demo
     if not args.csv:
         ap.error("give a CSV path or --demo PATH")

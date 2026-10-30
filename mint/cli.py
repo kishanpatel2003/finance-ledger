@@ -50,7 +50,7 @@ def cmd_init(args):
 def cmd_demo(args):
     from .demo import write_demo
     n = write_demo(args.path, days=args.days)
-    print(f"wrote {n} synthetic rows to {args.path}")
+    print(f"wrote {n} example rows to {args.path}")
 
 
 def cmd_import_csv(args):
@@ -221,7 +221,7 @@ def main(argv=None):
 
     sub.add_parser("init", help="create ~/.mint, the ledger, and the ingest token").set_defaults(fn=cmd_init)
 
-    s = sub.add_parser("demo", help="write a synthetic CSV to try things out")
+    s = sub.add_parser("demo", help="write example transactions to CSV")
     s.add_argument("path")
     s.add_argument("--days", type=int, default=300)
     s.set_defaults(fn=cmd_demo)
