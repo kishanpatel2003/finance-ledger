@@ -1,0 +1,26 @@
+# Private financial data never enters Git. Exports, statements, reports, tokens.
+data/
+exports/
+reports/
+*.csv
+*.tsv
+*.ofx
+*.qfx
+*.qif
+*.xlsx
+*.xls
+*.pdf
+*.json.gz
+.env
+.env.*
+*.sqlite
+*.sqlite3
+*.db
+secrets/
+tokens/
+
+# Python / OS noise
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
