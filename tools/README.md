@@ -8,7 +8,7 @@ Thin wrapper over `mint/profile.py`; standard library only. For the full ledger 
 ```
 python3 tools/profile_sample.py ~/Downloads/origin-export.csv
 python3 tools/profile_sample.py export.csv --since 2025-11-01 --accounts "amex,chase,apple card,wells"
-python3 tools/profile_sample.py --demo /tmp/example.csv       # create and profile example transactions
+python3 tools/profile_sample.py --example /tmp/example.csv       # create and profile example transactions
 ```
 
 It writes `reports/profile.md` and `reports/profile.json` (both gitignored) and

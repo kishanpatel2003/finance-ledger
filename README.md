@@ -8,7 +8,7 @@ Python 3.9+; standard library only. Run from the repository root:
 
 ```sh
 export MINT_HOME="$(mktemp -d)"
-python3 -m mint demo "$MINT_HOME/example.csv"
+python3 -m mint example "$MINT_HOME/example.csv"
 python3 -m mint import-csv "$MINT_HOME/example.csv" --source example
 python3 -m mint import-csv "$MINT_HOME/example.csv" --source example
 python3 -m mint character build --name Baseline

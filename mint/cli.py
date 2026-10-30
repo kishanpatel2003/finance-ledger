@@ -221,7 +221,7 @@ def main(argv=None):
 
     sub.add_parser("init", help="create ~/.mint, the ledger, and the ingest token").set_defaults(fn=cmd_init)
 
-    s = sub.add_parser("demo", help="write example transactions to CSV")
+    s = sub.add_parser("example", aliases=["demo"], help="write example transactions to CSV")
     s.add_argument("path")
     s.add_argument("--days", type=int, default=300)
     s.set_defaults(fn=cmd_demo)

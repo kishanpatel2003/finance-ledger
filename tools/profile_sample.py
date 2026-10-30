@@ -7,7 +7,7 @@ This is the quickest way to look at an export before committing it to the ledger
         [--accounts "amex,chase"] [--sign auto|neg-out|pos-out]
         [--map date=Date,amount=Amount,merchant=Description,category=Category,account=Account]
         [--out reports/] [--quiet]
-  python3 tools/profile_sample.py --demo example.csv  # create and profile example transactions
+  python3 tools/profile_sample.py --example example.csv  # create and profile example transactions
 
 Same engine as `python3 -m mint profile`; see mint/profile.py.
 """
@@ -28,7 +28,7 @@ from mint.profile import profile, render_md  # noqa: E402
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("csv", nargs="?")
-    ap.add_argument("--demo", metavar="PATH")
+    ap.add_argument("--example", "--demo", dest="demo", metavar="PATH")
     ap.add_argument("--since", type=lambda s: datetime.strptime(s, "%Y-%m-%d").date())
     ap.add_argument("--until", type=lambda s: datetime.strptime(s, "%Y-%m-%d").date())
     ap.add_argument("--accounts")
@@ -43,7 +43,7 @@ def main(argv=None):
         print(f"wrote {write_demo(args.demo)} example rows to {args.demo}", file=sys.stderr)
         args.csv = args.demo
     if not args.csv:
-        ap.error("give a CSV path or --demo PATH")
+        ap.error("give a CSV path or --example PATH")
     overrides = {}
     if args.map:
         for part in args.map.split(","):
